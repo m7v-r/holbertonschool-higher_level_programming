@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
+    import os
+    import subprocess
+
+    if not os.path.exists("/tmp/hidden_4.pyc"):
+        url = "https://github.com/hs-hq/0x02.py/raw/main/hidden_4.pyc"
+        subprocess.run(["curl", "-Lso", "/tmp/hidden_4.pyc", url])
+
+    import sys
+    sys.path.append('/tmp')
     import hidden_4
 
-    # Get all names defined in the module
     all_names = dir(hidden_4)
-
-    # Sort the names alphabetically
     all_names.sort()
 
-    # Filter and print names that do not start with "__"
     for name in all_names:
         if not name.startswith("__"):
             print("{}".format(name))
+
