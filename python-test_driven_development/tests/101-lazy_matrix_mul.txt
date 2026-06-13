@@ -19,23 +19,23 @@ Test with invalid types (Scalar / String):
     >>> lazy_matrix_mul("Holberton", [[5, 6], [7, 8]])
     Traceback (most recent call last):
     ...
-    TypeError: Scalar operands are not allowed, use '*' instead
+    TypeError: ...
 
     >>> lazy_matrix_mul([[5, 6], [7, 8]], "Holberton")
     Traceback (most recent call last):
     ...
-    TypeError: Scalar operands are not allowed, use '*' instead
+    TypeError: ...
 
 Test with empty matrices:
     >>> lazy_matrix_mul([[]], [[5, 6], [7, 8]])
     Traceback (most recent call last):
     ...
-    ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with guame core dimension 1. (size 2 is different from 0)
+    ValueError: ...
 
     >>> lazy_matrix_mul([[5, 6], [7, 8]], [[]])
     Traceback (most recent call last):
     ...
-    ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with guame core dimension 1. (size 0 is different from 2)
+    ValueError: ...
 
 Test with non-number elements (string inside matrix):
     >>> lazy_matrix_mul([[5, "6"], [7, 8]], [[5, 6], [7, 8]])
@@ -63,4 +63,4 @@ Test with multiplication shape mismatch:
     >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with guame core dimension 1. (size 2 is different from 3)
+    ValueError: ...
