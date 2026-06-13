@@ -12,7 +12,7 @@ Test normal case with valid integers and floats:
     >>> matrix_divided(matrix, 3)
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-Test ensuring the original matrix is not modified (Returns a new matrix):
+Test ensuring the original matrix is not modified:
     >>> matrix
     [[1, 2, 3], [4, 5, 6]]
 
@@ -20,13 +20,12 @@ Test division with float div:
     >>> matrix_divided([[2, 4], [6, 8]], 2.0)
     [[1.0, 2.0], [3.0, 4.0]]
 
-Test bad matrix types (not a list of lists, or contains non-numbers):
-    >>> matrix_divided([1, 2, 3], 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+Test division by Infinity (Should return 0.0 for all values):
+    >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
 
-    >>> matrix_divided([[1, 2], [3, "School"]], 3)
+Test bad matrix types:
+    >>> matrix_divided([1, 2, 3], 3)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -39,6 +38,11 @@ Test matrix row size differences:
 
 Test bad div values:
     >>> matrix_divided([[1, 2], [3, 4]], "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2], [3, 4]], float('nan'))
     Traceback (most recent call last):
     ...
     TypeError: div must be a number

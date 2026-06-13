@@ -27,7 +27,9 @@ def matrix_divided(matrix, div):
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    if div != div or div == float('inf') or div == float('-inf'):
+
+    # Check for NaN specifically (NaN is never equal to itself)
+    if div != div:
         raise TypeError("div must be a number")
 
     if div == 0:
@@ -47,7 +49,7 @@ def matrix_divided(matrix, div):
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError(msg)
-            if element != element or element == float('inf') or element == float('-inf'):
+            if element != element:
                 raise TypeError(msg)
 
     return [[round(item / div, 2) for item in row] for row in matrix]
