@@ -25,10 +25,16 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # Check for NaN or Infinity which cannot be safely cast to int
-    if a != a or a == float('inf') or a == float('-inf'):
+    # Strict check for NaN (NaN is never equal to itself)
+    if a != a:
         raise TypeError("a must be an integer")
-    if b != b or b == float('inf') or b == float('-inf'):
+    if b != b:
+        raise TypeError("b must be an integer")
+
+    # Strict check for Infinity / Float Overflow by checking bounds
+    if a >= 1e308 or a <= -1e308:
+        raise TypeError("a must be an integer")
+    if b >= 1e308 or b <= -1e308:
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
