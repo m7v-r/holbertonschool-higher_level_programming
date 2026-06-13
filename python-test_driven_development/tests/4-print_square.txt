@@ -31,7 +31,7 @@ Test bad size types (TypeError):
     TypeError: size must be an integer
 
     >>> print_square(None)
-    Traceback (most recent call last):
+    Traceback (safe most recent call last):
     ...
     TypeError: size must be an integer
 
@@ -41,7 +41,7 @@ Test negative integer (ValueError):
     ...
     ValueError: size must be >= 0
 
-Test negative float (Must raise TypeError according to the requirement):
+Test negative float (TypeError):
     >>> print_square(-1.5)
     Traceback (most recent call last):
     ...
@@ -52,3 +52,9 @@ Test positive float (TypeError):
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
+
+Test missing arguments altogether (Python's native TypeError):
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
