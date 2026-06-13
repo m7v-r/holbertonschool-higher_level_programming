@@ -17,7 +17,8 @@ def matrix_divided(matrix, div):
         A new matrix containing the divided elements.
 
     Raises:
-        TypeError: If the matrix is invalid, rows are uneven, or div is not a number.
+        TypeError: If the matrix is invalid, rows are uneven,
+            or div is not a number.
         ZeroDivisionError: If div is equal to 0.
     """
     msg = "matrix must be a matrix (list of lists) of integers/floats"
