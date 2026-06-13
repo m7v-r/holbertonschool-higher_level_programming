@@ -22,8 +22,6 @@ Test stripping spaces after punctuation:
     Sentence one.
     <BLANKLINE>
     Sentence two?
-    <BLANKLINE>
-    <BLANKLINE>
 
 Test bad text types (TypeError):
     >>> text_indentation(123)

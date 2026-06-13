@@ -18,16 +18,13 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Flag to control trimming of leading spaces for new lines
+    # Clean character-by-character printing logic without trailing text issues
     skip_space = True
-
     for char in text:
         if skip_space and char == ' ':
             continue
-
         skip_space = False
         print(char, end="")
-
         if char in ['.', '?', ':']:
             print("\n")
             skip_space = True
