@@ -1,0 +1,42 @@
+==================================
+How to use the say_my_name module
+==================================
+
+This module provides a function `say_my_name(first_name, last_name="")` that prints a full name.
+
+First, import the function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test normal case with first and last name:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+Test using the default value for last_name (empty string):
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Test bad first_name type (integer):
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test bad last_name type (list):
+    >>> say_my_name("John", [1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test passing None as arguments:
+    >>> say_my_name(None, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
