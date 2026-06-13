@@ -31,7 +31,7 @@ Test bad size types (TypeError):
     TypeError: size must be an integer
 
     >>> print_square(None)
-    Traceback (safe most recent call last):
+    Traceback (most recent call last):
     ...
     TypeError: size must be an integer
 
