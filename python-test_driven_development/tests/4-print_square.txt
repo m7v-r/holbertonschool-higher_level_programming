@@ -1,0 +1,54 @@
+==================================
+How to use the print_square module
+==================================
+
+This module provides a function `print_square(size)` that prints a square with the `#` character.
+
+First, import the function:
+    >>> print_square = __import__('4-print_square').print_square
+
+Test normal cases:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(0)
+
+Test bad size types (TypeError):
+    >>> print_square("School")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square([1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Test negative integer (ValueError):
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Test negative float (Must raise TypeError according to the requirement):
+    >>> print_square(-1.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Test positive float (TypeError):
+    >>> print_square(4.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
