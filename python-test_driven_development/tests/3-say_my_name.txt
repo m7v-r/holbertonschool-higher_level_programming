@@ -40,3 +40,9 @@ Test passing None as arguments:
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
+
+Test missing arguments altogether (Python's native TypeError):
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
