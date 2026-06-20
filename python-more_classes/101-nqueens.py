@@ -1,13 +1,15 @@
 #!/usr/bin/python3
+"""N Queens puzzle solver."""
 import sys
+
 
 def is_safe(board, row, col):
     """Check if it's safe to place a queen at board[row][col]."""
     for r, c in board:
-        if c == col or \
-           abs(r - row) == abs(c - col):
+        if c == col or abs(r - row) == abs(c - col):
             return False
     return True
+
 
 def solve_nqueens(n, row, current_board, solutions):
     """Backtracking algorithm to find all solutions."""
@@ -20,6 +22,7 @@ def solve_nqueens(n, row, current_board, solutions):
             current_board.append([row, col])
             solve_nqueens(n, row + 1, current_board, solutions)
             current_board.pop()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
