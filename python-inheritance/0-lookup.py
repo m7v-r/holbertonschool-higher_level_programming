@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module provides a function to list all attributes and methods of an object.
+This module provides a function to list all attributes
+and methods of an object.
 """
 
 
