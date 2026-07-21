@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Contains the class definition of a City for relationship."""
-from relationship_state import Base
 from sqlalchemy import Column, ForeignKey, Integer, String
+from relationship_state import Base
 
 
 class City(Base):
